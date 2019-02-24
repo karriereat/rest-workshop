@@ -1,0 +1,31 @@
+{
+  "name": "karriere/rest-workshop",
+  "authors": [
+    {
+      "name": "markus.ritberger",
+      "email": "markus.ritberger@karriere.at"
+    }
+  ],
+  "scripts": {
+    "example-1": "php -S localhost:8080 -t ./examples/example-1",
+    "example-2": "php -S localhost:8080 -t ./examples/example-2",
+    "example-3": "php -S localhost:8080 -t ./examples/example-3",
+    "example-4": "php -S localhost:8080 -t ./examples/example-4",
+    "example-5": "php -S localhost:8080 -t ./examples/example-5",
+    "example-6": "php -S localhost:8080 -t ./examples/example-6",
+    "example-7": "php -S localhost:8080 -t ./examples/example-7",
+    "example-8": "php -S localhost:8080 -t ./examples/example-8",
+    "example-9": "php -S localhost:8080 -t ./examples/example-9"
+  },
+  "config": {
+    "process-timeout": 2000
+  },
+  "require": {
+    "slim/slim": "^3.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Karriere\\RestWorkshop\\": "src/"
+    }
+  }
+}
