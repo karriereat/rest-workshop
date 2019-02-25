@@ -18,40 +18,40 @@ class SessionStore implements StoreInterface
         }
 
         $this->name = $name;
-        if (!is_array($_SESSION[self::STORE][$this->name])) {
-            $_SESSION[self::STORE][$this->name] = [];
+        if (!is_array($_SESSION[StoreInterface::STORE][$this->name])) {
+            $_SESSION[StoreInterface::STORE][$this->name] = [];
         }
     }
 
     public function getAll(): array
     {
-        return array_values($_SESSION[self::STORE][$this->name]);
+        return array_values($_SESSION[StoreInterface::STORE][$this->name]);
     }
 
     public function save($id, $data)
     {
-        $_SESSION[self::STORE][$this->name][$id] = $data;
+        $_SESSION[StoreInterface::STORE][$this->name][$id] = $data;
     }
 
     public function get(int $id)
     {
-        return $_SESSION[self::STORE][$this->name][$id];
+        return $_SESSION[StoreInterface::STORE][$this->name][$id];
     }
 
     public function delete(int $id)
     {
-        unset($_SESSION[self::STORE][$this->name][$id]);
+        unset($_SESSION[StoreInterface::STORE][$this->name][$id]);
     }
 
     public function deleteAll()
     {
-        unset($_SESSION[self::STORE]);
+        unset($_SESSION[StoreInterface::STORE]);
     }
 
     public function getNextId(): int
     {
         $highestId = 0;
-        foreach ($_SESSION[self::STORE][$this->name] as $id => $data) {
+        foreach ($_SESSION[StoreInterface::STORE][$this->name] as $id => $data) {
             if ($id > $highestId) {
                 $highestId = $id;
             }
